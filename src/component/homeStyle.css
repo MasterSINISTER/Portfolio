@@ -4,6 +4,7 @@
 	padding: 0;
 	/*overflow-x: hidden;*/
 	transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+	scroll-behavior: smooth;
 }
 .social-heading{
   text-align: center;
@@ -12,6 +13,81 @@
 }
 
 
+h6{
+	margin-left: -19%;
+}
+html{
+	scroll-behavior: smooth;
+}
+                                                                       /*Navbar Editing*/
+.item-1, .item-2, .item-3{
+	font-size: 1rem;
+}															   
+
+																	   
+
+/*Landing Subheading Designing*/
+/* === removing default button style ===*/
+.button {
+	margin: 0;
+	height: auto;
+	background: transparent;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+  }
+  
+  /* button styling */
+  .button-subheading {
+	--border-right: 6px;
+	--text-stroke-color: rgba(255,255,255,0.6);
+	--animation-color: #37FF8B;
+	--fs-size: 2em;
+	letter-spacing: 1.9px;
+	text-decoration: none;
+	font-size: var(--fs-size);
+	font-family: "Arial";
+	position: relative;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  /* this is the text, when you hover on button */
+  .hover-text {
+	position: absolute;
+	box-sizing: border-box;
+	content: attr(data-text);
+	color: var(--animation-color);
+	width: 0%;
+	inset: 0;
+	border-right: var(--border-right) solid var(--animation-color);
+	overflow: hidden;
+	transition: 0.5s;
+	-webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button-subheading:hover .hover-text {
+	width: 100%;
+	filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+
+
+
+/**/
+.fa-solid{
+	font-size: 100%;
+}
+/*Button Styling*/
+
+
+
+
+/**/
+#title-heading{
+	font-family: Poppins;
+
+}
 .parent {
   margin-top: 10%;
   width: 100%;
@@ -87,22 +163,37 @@ body {
 	background: #8892b0;
 }
 
+
 section#header {
 	position: relative;
 	height: 100vh;
 	max-height: 100vh;
-	background-color: #111111;
-	color: #777777;
+	background-color: #000000;
+	/* background-image: url('https://as2.ftcdn.net/v2/jpg/01/04/39/59/1000_F_104395999_8KgvR7PjbcRwNj8k48bxnAuIWOeaGC6F.jpg'); */
+	color: #ffffff;
 	font-family: "Bebas Neue", sans-serif;
 	overflow-wrap: break-word;
 	padding: 0 1em;
 }
-#header h1 {
+/* Black Flim Overlap */
+
+/* section#header::before{
+	content: "";
+	position: absolute;
+  	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+} */
+#header .heading-main {
 	display: flex;
+	z-index: 9999;
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: column;
-	font-size: 20px;
+	font-size: 40px;
 	letter-spacing: 1vw;
 	position: relative;
 	height: 100%;
