@@ -12,6 +12,23 @@
 
 }
 
+.navbar-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: center;
+}
+.nav-link{
+
+    font-family: Poppins;
+    font-weight: 500;
+
+}
+.nav-link:hover{
+    text-decoration: underline;
+    transition: 1s linear;
+}
+
 
 h6{
 	margin-left: -19%;
