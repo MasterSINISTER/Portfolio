@@ -4,6 +4,7 @@ import "./homeStyle.css";
 import { useInView } from "react-intersection-observer";
 import "./MyComponent";
 import Contact from "./Contact";
+import Share from "./Share";
 export default function Home() {
   function aboutClick() {
     const percentage = 100; // Change this to the desired percentage
@@ -111,7 +112,7 @@ export default function Home() {
             <section id="header">
               <h1 className="heading-main">
                 <div>
-                  <span id="landing-subheading">WEB DEVELOPER</span>
+                  <span id="landing-subheading">DEVELOPER</span>
                 </div>
 
                 <div id="title">
@@ -284,7 +285,8 @@ export default function Home() {
                 <h2>SOCIALS</h2>
                 <p>Let's Connect</p>
               </div>
-              <div className="parent">
+              <Share/>
+              {/* <div className="parent">
                 <div className="child child-1">
                   <button className="button btn-1">
                     <svg
@@ -332,7 +334,7 @@ export default function Home() {
                     </svg>
                   </button>
                 </div>
-              </div>
+              </div> */}
             </section>
             <section id="contact">
               <div className="section-title">

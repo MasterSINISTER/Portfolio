@@ -1,49 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './contactStyle.css'
-import './send_email.php'
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-/**
- * Contact Component
- * 
- * This component is responsible for rendering the contact form.
- * It uses a HTML form to send the user's contact information to 
- * the backend for processing.
- * 
- * @returns {jsx} Contact form
- */
-function Contact() {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can implement the email sending functionality here
+    console.log(formData);
+    // Reset form after submission
+    setFormData({ name: '', email: '', message: '' });
+  };
+
   return (
-    // Fragment
-    <>
-      {/* Contact form */
-      }
-      <form action="send_email.php" method="POST">
-        {/* Form label for name */
-        }
-        <label htmlFor="name">Name:</label><br />
-        {/* Text input for name */
-        }
-        <input type="text" id="name" name="name" required /><br /><br />
-
-        {/* Form label for email */
-        }
-        <label htmlFor="email">Email:</label><br />
-        {/* Email input for email */
-        }
-        <input type="email" id="email" name="email" required /><br /><br />
-
-        {/* Form label for message */
-        }
-        <label htmlFor="message">Message:</label><br />
-        {/* Textarea for message */
-        }
-        <textarea id="message" name="message" rows="9" cols='50' required></textarea><br /><br />
-
-        {/* Submit button */
-        }
-        <input type="submit" value="Submit" />
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name" id='contact-subheading'>Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="email" i='contact-subheading'>Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="message" i='contact-subheading'>Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" className='btn-submit'>Send</button>
       </form>
-    </>
+    </div>
   );
-    }
+};
+
 export default Contact;
