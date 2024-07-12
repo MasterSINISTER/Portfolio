@@ -189,6 +189,9 @@ export default function Home() {
                       <li>
                         <span>Age:</span> 21
                       </li>
+                      <li>
+                        <img src="https://s7.ezgif.com/tmp/ezgif-7-802d112106.gif" className="tech-gif"></img>
+                      </li>
                     </ul>
                   </div>
                 </div>
