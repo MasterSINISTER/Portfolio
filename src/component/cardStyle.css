@@ -1,0 +1,79 @@
+.card-project {
+  --bg: #000000;
+  --hover-bg: #000000ad;
+  --hover-text: #ffffff;
+  max-width: 25ch;
+  text-align: center;
+  background: rgba( 100, 100, 100, 0.25 );
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 1.5em;
+  padding-block: 1.8em;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s cubic-bezier(.6,.4,0,1),transform .15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.card-project-img{
+  width: 100%;
+  text-align: center;;
+  height: auto;
+}
+
+.btn-visit{
+  font-size: 200%;
+  font-family: Poppins;
+  font-weight: 500;
+  border: wheat 1px;
+}
+.card-project__body {
+  color: #464853;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+.card-project > :not(span) {
+  transition: .3s cubic-bezier(.6,.4,0,1);
+}
+
+.card-project > strong {
+  display: block;
+  font-size: 1.4rem;
+  letter-spacing: -.035em;
+}
+
+.card-project span {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hover-text);
+  border-radius: 5px;
+  font-weight: bold;
+  top: 100%;
+  transition: all .3s cubic-bezier(.6,.4,0,1);
+}
+
+.card-project:hover span {
+  top: 0;
+  font-size: 1.2em;border: #ffffff 1px solid;
+}
+
+.card-project:hover {
+  background: var(--hover-bg);
+}
+
+.card-project:hover>div,.card-project:hover>strong {
+  opacity: 0;
+}

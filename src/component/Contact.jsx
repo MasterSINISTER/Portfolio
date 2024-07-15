@@ -1,63 +1,48 @@
-import React, { useState } from 'react';
+import React from "react";
 import './contactStyle.css'
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can implement the email sending functionality here
-    console.log(formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
-  };
-
+function Contact() {
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name" id='contact-subheading'>Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+    <>
+      <div class="container-contact">
+        <div class="modal">
+          <div class="modal__header">
+            <span class="modal__title">New project</span>
+            <button class="button-contact button--icon">
+              <svg
+                width="24"
+                viewBox="0 0 24 24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="modal__body">
+            <div class="input">
+              <label class="input__label">Project title</label>
+              <input class="input__field" type="text" />
+              <p class="input__description">
+                The title must contain a maximum of 32 characters
+              </p>
+            </div>
+            <div class="input">
+              <label class="input__label">Description</label>
+              <textarea class="input__field input__field--textarea"></textarea>
+              <p class="input__description">
+                Give your project a good description so everyone know what's it
+                for
+              </p>
+            </div>
+          </div>
+          <div class="modal__footer">
+            <button class="button button--primary">Create project</button>
+          </div>
         </div>
-        <div>
-          <label htmlFor="email" i='contact-subheading'>Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message" i='contact-subheading'>Message</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit" className='btn-submit'>Send</button>
-      </form>
-    </div>
+      </div>
+    </>
   );
-};
+}
 
 export default Contact;
