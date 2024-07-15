@@ -13,6 +13,7 @@
     "jquery": "^3.7.1",
     "npm": "^10.4.0",
     "react": "^18.2.0",
+    "emailjs-com": "^2.6.4",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.8.1",
     "react-scripts": "5.0.1",
@@ -23,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "npm install emailjs-com"
   },
   "eslintConfig": {
     "extends": [
