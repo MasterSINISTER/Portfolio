@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import "./MyComponent";
 import Share from "./Share";
 import Projects from "./Projects";
+import ContactUs from "./ContactUs";
 export default function Home() {
   function aboutClick() {
     const percentage = 100; // Change this to the desired percentage
@@ -37,6 +38,19 @@ export default function Home() {
     const percentage = 100; // Change this to the desired percentage
     const windowHeight = window.innerHeight;
     const section = document.querySelector("#socials");
+    const sectionOffsetTop = section.offsetTop;
+    const targetScrollPosition =
+      sectionOffsetTop - windowHeight * (1 - percentage / 100);
+
+    window.scrollTo({
+      top: targetScrollPosition,
+      behavior: "smooth",
+    });
+  }
+  function projectClick() {
+    const percentage = 100; // Change this to the desired percentage
+    const windowHeight = window.innerHeight;
+    const section = document.querySelector("#projects");
     const sectionOffsetTop = section.offsetTop;
     const targetScrollPosition =
       sectionOffsetTop - windowHeight * (1 - percentage / 100);
@@ -105,7 +119,7 @@ export default function Home() {
                 <i
                   className="fas fa-project-diagram"
                   id="skill-click"
-                  onClick={skillClick}
+                  onClick={projectClick}
                 ></i>
                 <h6>Projects</h6>
               </span>
@@ -136,7 +150,7 @@ export default function Home() {
                   >
                     <span id="title-heading">Rishabh Gupta</span>
                     <button className="btn-hire" id="typeitspan">
-                      Hire Me
+                      Hire Me !
                     </button>
                   </TypeIt>
                 </div>
@@ -313,19 +327,21 @@ export default function Home() {
               </div>
               <Share />
             </section>
-            <section id="contact">
+            <section id="projects">
               <div className="section-title">
                 <h2>Projects</h2>
                 <p style={{ marginTop: "30px" }}>Creations</p>
               </div>
               <Projects />
             </section>
-            <section id="contack" className="dark">
+            <section id="contact" className="dark">
               <div className="section-title">
                 <h2>Contact</h2>
                 <p style={{ marginTop: "30px" }}>Get In Touch</p>
               </div>
-              <h1>Working</h1>
+              <div className="outerFormContainer" style={{marginLeft:'25%'}}>
+              <ContactUs />
+              </div>
             </section>
           </>
         </div>
