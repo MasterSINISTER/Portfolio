@@ -150,7 +150,7 @@ export default function Home() {
                   >
                     <span id="title-heading">Rishabh Gupta</span>
                     <button className="btn-hire" id="typeitspan">
-                      Hire Me !
+                      <a href="https://drive.google.com/file/d/1GHV8RpIOAgukARbTJLX_Nkltfm4d3sSV/view?usp=sharing">Hire Me !</a>
                     </button>
                   </TypeIt>
                 </div>
